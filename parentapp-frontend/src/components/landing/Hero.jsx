@@ -1,6 +1,8 @@
 import { Link } from "react-router-dom";
+import { useAuth } from "../../context/AuthContext";
 
 export default function Hero() {
+  const { isAuthenticated } = useAuth();
   return (
     <div className="hero-wrap">
       <div className="blob blob-1" />
@@ -12,13 +14,16 @@ export default function Hero() {
             You don&apos;t have to face <em>the hard moments</em> alone
           </h1>
           <p className="hero-desc">
-            PARENT-APP combines AI-driven guidance, emotional regulation tools, and
-            educational resources — so you can respond calmly when your child needs you
-            most.
+            PARENT-APP combines AI-driven guidance, emotional regulation tools,
+            and educational resources — so you can respond calmly when your
+            child needs you most.
           </p>
           <div className="hero-actions">
-            <Link to="/" className="btn-primary">
-              Open the app →
+            <Link
+              to={isAuthenticated ? "/" : "/register"}
+              className="btn-primary"
+            >
+              {isAuthenticated ? "Open the app →" : "Get started →"}
             </Link>
             <a href="#how-it-works" className="btn-secondary">
               ▶ See how it works
@@ -55,12 +60,12 @@ export default function Hero() {
             </div>
             <div className="phone-body">
               <div className="chat-bubble bubble-ai">
-                My toddler has been crying for 40 minutes and I don&apos;t know what to
-                do anymore 😭
+                My toddler has been crying for 40 minutes and I don&apos;t know
+                what to do anymore 😭
               </div>
               <div className="chat-bubble bubble-user">
-                Take a slow breath — you&apos;re doing great. Let&apos;s try the 5-4-3-2-1
-                grounding exercise together first...
+                Take a slow breath — you&apos;re doing great. Let&apos;s try the
+                5-4-3-2-1 grounding exercise together first...
               </div>
               <div className="chat-typing">
                 <div className="dot" />
@@ -81,14 +86,22 @@ export default function Hero() {
           <div className="float-card float-card-1">
             <div style={{ fontSize: "1.4rem" }}>🧘</div>
             <div>
-              <strong style={{ display: "block", color: "var(--ink)" }}>Calm Mode Active</strong>
+              <strong style={{ display: "block", color: "var(--ink)" }}>
+                Calm Mode Active
+              </strong>
               <span style={{ color: "var(--muted)", fontSize: "0.72rem" }}>
                 Breathing exercise ready
               </span>
             </div>
           </div>
           <div className="float-card float-card-2">
-            <div style={{ fontSize: "0.72rem", color: "var(--muted)", marginBottom: 6 }}>
+            <div
+              style={{
+                fontSize: "0.72rem",
+                color: "var(--muted)",
+                marginBottom: 6,
+              }}
+            >
               Your mood today
             </div>
             <div className="mood-dots">
@@ -104,7 +117,13 @@ export default function Hero() {
             </div>
           </div>
           <div className="float-card float-card-3">
-            <div style={{ fontSize: "0.68rem", color: "var(--muted)", textTransform: "uppercase" }}>
+            <div
+              style={{
+                fontSize: "0.68rem",
+                color: "var(--muted)",
+                textTransform: "uppercase",
+              }}
+            >
               Streak
             </div>
             <div

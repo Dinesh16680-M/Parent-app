@@ -22,6 +22,7 @@ function ChatRedirect() {
 export const router = createBrowserRouter([
   { path: "/login", Component: Login },
   { path: "/register", Component: Register },
+  { path: "/welcome", Component: Welcome },
   {
     path: "/",
     Component: RootLayout,
@@ -34,7 +35,6 @@ export const router = createBrowserRouter([
       { path: "learn/:topicId", Component: TopicDetail },
       { path: "emergency", Component: Emergency },
       { path: "profile", Component: Profile },
-      { path: "welcome", Component: Welcome },
       { path: "tips", Component: DailyTips },
       { path: "mood", Component: MoodCheckin },
       { path: "milestones", Component: Milestones },

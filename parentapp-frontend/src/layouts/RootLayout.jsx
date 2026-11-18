@@ -12,7 +12,7 @@ const RootLayout = () => {
 
   useEffect(() => {
     if (!loading && !isAuthenticated) {
-      navigate("/login", { replace: true });
+      navigate("/welcome", { replace: true });
     }
   }, [loading, isAuthenticated, navigate]);
 
@@ -37,7 +37,10 @@ const RootLayout = () => {
     <div className={isChat ? "layout-chat-active" : ""}>
       {user && !user.onboarded && <OnboardingModal />}
       <Header />
-      <div key={pathname} className={isChat ? "chat-page-below-nav" : "app-page"}>
+      <div
+        key={pathname}
+        className={isChat ? "chat-page-below-nav" : "app-page"}
+      >
         <Outlet />
       </div>
     </div>
