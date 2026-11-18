@@ -246,7 +246,7 @@ If the backend URL is not `https://parentapp-backend.onrender.com`, set `VITE_AP
 | Name | Role |
 |---|---|
 | Vishal Naroju | UI implementation & component integration |
-| Dinesh Mariappan | UI design, styling & MongoDB integration |
+| Dinesh Mariappan | UI design, styling & backend services |
 | Animesh Mondol | Chat interface & frontend-backend integration |
 | Mitali Gaikwad | API development & backend services |
 | Nidhi Bennur | AI integration & prompt engineering |
